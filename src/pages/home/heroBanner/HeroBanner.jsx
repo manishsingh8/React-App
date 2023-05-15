@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./style.scss";
 import useFetch from "../../../hooks/UseFetch";
-
 import Img from "../../../components/lazyLoadImage/Img";
-
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
   const HeroBanner = () => {
@@ -31,15 +29,14 @@ import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
   return (
     <div className="heroBanner">
-
-   {!loading &&  <div className="backdrop-img">
-      <Img src = {background} />
-    </div>}
-
-    <ContentWrapper>
-        <div className="opacity-layer">
-
+      {!loading && (
+        <div className="backdrop-img">
+          <Img src={background} />
         </div>
+      )}
+
+      <ContentWrapper>
+        <div className="opacity-layer"></div>
         <div className="heroBannerContent">
           <span className="title">Welcome</span>
           <span className="subTitle">
@@ -57,9 +54,7 @@ import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
             <button>Search</button>
           </div>
         </div>
-      
-    </ContentWrapper>
-      
+      </ContentWrapper>
     </div>
   );
 };
